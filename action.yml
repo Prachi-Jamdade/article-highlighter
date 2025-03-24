@@ -1,9 +1,5 @@
 name: 'Update Profile README'
 author: 'Prachi Jamdade'
-description: 'Fetch recent articles from RSS feeds and update the user profile README.'
-inputs:
-  feed_urls:name: 'Update Profile README'
-author: 'Prachi Jamdade'
 description: 'Fetch recent or top articles from RSS feeds and update the user profile README.'
 inputs:
   feed_urls:
@@ -27,26 +23,6 @@ runs:
     - ${{ inputs.feed_urls }}
     - ${{ inputs.article_limit }}
     - ${{ inputs.article_type }}
-    - ${{ inputs.github_token }}
-branding:
-  icon: 'align-right'
-  color: 'blue'
-
-    description: 'Comma-separated list of RSS feed URLs'
-    required: true
-  article_limit:
-    description: 'Number of articles to fetch'
-    required: true
-    default: 5
-  github_token:
-    description: 'GitHub token for authentication'
-    required: true
-runs:
-  using: 'docker'
-  image: 'Dockerfile'
-  args:
-    - ${{ inputs.feed_urls }}
-    - ${{ inputs.article_limit }}
     - ${{ inputs.github_token }}
 branding:
   icon: 'align-right'
